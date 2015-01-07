@@ -479,7 +479,7 @@ namespace D_Nidalee
                             Player.Distance(target) <= QC.Range)
                   
                         {
-                        	 Orbwalker.SetAttack(true);
+                        	
                             QC.Cast();
                          
                         }
@@ -512,7 +512,7 @@ namespace D_Nidalee
                             Player.Distance(target) <= QC.Range)
                         
                         {
-                        		Orbwalker.SetAttack(true);
+                        		
                         	QC.Cast();
                         
       
