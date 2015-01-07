@@ -475,19 +475,20 @@ namespace D_Nidalee
                     if (IsCougar)
                     {
                     	
-                    	if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= QC.Range)
+                    if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= WC.Range)
                   
                         {
-                        	
-                            QC.Cast();
-                         
-                        }
-			
-			if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= WC.Range)			
-                        {
                             WC.Cast(target);
+                            }
+			
+				if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= QC.Range)
+						
+                        {
+                           
+                            QC.Cast();
+                            	Orbwalker.SetAttack(true);
                         }
                          if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= EC.Range)
@@ -508,21 +509,20 @@ namespace D_Nidalee
 
                     if (IsCougar)
                     {
-                    	if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= QC.Range)
-                        
-                        {
-                        		
-                        	QC.Cast();
-                        
-      
-                        }
-                        if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
+                    	
+                             if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= WC.Range)
                         
                         {
-                        	WC.Cast(target);
-                      
+                        WC.Cast(target);
+                        }
+                       
+                            	if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= QC.Range)
+                        
+                        {
+                        		QC.Cast();
+                        	Orbwalker.SetAttack(true);
                         }
                         if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= EC.Range)
