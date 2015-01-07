@@ -480,7 +480,7 @@ namespace D_Nidalee
                             WC.Cast(target);
                         }
 						
-						if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
+			if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= QC.Range)
                         
                         {
@@ -507,21 +507,27 @@ namespace D_Nidalee
 
                     if (IsCougar)
                     {
+                    	if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= QC.Range)
+                        
+                        {
+                        	QC.Cast();
+                           // WC.Cast(target);
+                        }
                         if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= WC.Range)
+                        
                         {
-                            WC.Cast(target);
+                        	WC.Cast(target);
+                            //EC.Cast(target);
                         }
                         if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= EC.Range)
+                       
                         {
-                            EC.Cast(target);
-                        }
-                        if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= QC.Range)
-                        {
-                            Orbwalker.SetAttack(true);
-                            QC.Cast();
+                        	EC.Cast(target);
+                           // Orbwalker.SetAttack(true);
+                            //QC.Cast();
                         }
 
                     }
