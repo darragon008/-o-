@@ -484,7 +484,7 @@ namespace D_Nidalee
                             Player.Distance(target) <= QC.Range)
                         
                         {
-						Orbwalker.SetAttack(true);
+					//	Orbwalker.SetAttack(true);
                             QC.Cast();
                         }
                          if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
