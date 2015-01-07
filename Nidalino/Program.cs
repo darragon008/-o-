@@ -474,23 +474,23 @@ namespace D_Nidalee
 
                     if (IsCougar)
                     {
-                        if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= WC.Range)
+                    	
+                    	if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= QC.Range)
+                  
+                        {
+                            QC.Cast();
+                           Orbwalker.SetAttack(true);
+                        }
+			
+			if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= WC.Range)			
                         {
                             WC.Cast(target);
-                        }
-						
-			if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= QC.Range)
-                        
-                        {
-					//	Orbwalker.SetAttack(true);
-                            QC.Cast();
                         }
                          if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= EC.Range)
                         {
-                            
                             EC.Cast(target);
                         }
 
@@ -512,6 +512,7 @@ namespace D_Nidalee
                         
                         {
                         	QC.Cast();
+                        	Orbwalker.SetAttack(true);
                            // WC.Cast(target);
                         }
                         if (WC.IsReady() && Config.Item("UseWComboCougar").GetValue<bool>() &&
