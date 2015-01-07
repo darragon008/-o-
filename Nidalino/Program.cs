@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -479,16 +479,19 @@ namespace D_Nidalee
                         {
                             WC.Cast(target);
                         }
-                        if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
+						
+						if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
+                            Player.Distance(target) <= QC.Range)
+                        
+                        {
+						Orbwalker.SetAttack(true);
+                            QC.Cast();
+                        }
+                         if (EC.IsReady() && Config.Item("UseEComboCougar").GetValue<bool>() &&
                             Player.Distance(target) <= EC.Range)
                         {
+                            
                             EC.Cast(target);
-                        }
-                        if (QC.IsReady() && Config.Item("UseQComboCougar").GetValue<bool>() &&
-                            Player.Distance(target) <= QC.Range)
-                        {
-                            Orbwalker.SetAttack(true);
-                            QC.Cast();
                         }
 
                     }
@@ -930,5 +933,3 @@ namespace D_Nidalee
         }
     }
 }
-     
-   
